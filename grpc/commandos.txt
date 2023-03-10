@@ -1,0 +1,7 @@
+python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. greeting.proto
+
+service Greeter {
+   rpc greet (ClientInput) returns (ServerOutput) {}
+   rpc ListFiles (ListFilesRequest) returns (ListFilesResponse) {}
+   rpc FileExists (FileExistsRequest) returns (FileExistsResponse) {}
+}

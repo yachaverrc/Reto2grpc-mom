@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+service FileService {
+  rpc ListFiles (ListFilesRequest) returns (ListFilesResponse) {}
+  rpc FileExists (FileExistsRequest) returns (FileExistsResponse) {}
+}
+
+service Greeter {
+   rpc greet (ClientInput) returns (ServerOutput) {}
+}
+
+message ClientInput {
+   string greeting = 1;
+}
+message ServerOutput {
+   string message = 1;
+}
+
+message ListFilesRequest {
+  string filename = 1;
+}
+
+message ListFilesResponse {
+  repeated string filenames = 1;
+}
+
+message FileExistsRequest {
+  string filename = 1;
+}
+
+message FileExistsResponse {
+  bool exists = 1;
+}
